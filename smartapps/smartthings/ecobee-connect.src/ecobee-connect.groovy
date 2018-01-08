@@ -625,7 +625,10 @@ boolean resumeProgram(deviceId) {
         ],
         functions: [
             [
-                type: "resumeProgram"
+                type: "resumeProgram",
+                params: [
+                    resumeAll: true
+                ]
             ]
         ]
     ]
