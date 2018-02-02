@@ -12,6 +12,7 @@
 *	for the specific language governing permissions and limitations under the License.
 *
 *	Z-Wave Plus Motion Sensor with Temperature Measurement, ZP3102*-5
+*	Added RH Capability - Taylor Sharp 2018-02-01
 *
 */
 
@@ -22,6 +23,7 @@ metadata {
 		capability "Configuration"
 		capability "Battery"
 		capability "Sensor"
+		capability "Relative Humidity Measurement"
 
 		// for Astralink
 		attribute "ManufacturerCode", "string"
@@ -55,12 +57,17 @@ metadata {
 					[value: 96, color: "#bc2323"]
 				]
 		}
+		
+		valueTile("humidity", "device.humidity", width: 2, height: 2) {
+			state "humidity", label:'${currentValue}%', unit:""
+		}
+		
 		valueTile("battery", "device.battery", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
 			state "battery", label:'${currentValue}% battery', unit:"%"
 		}
 
-		main(["motion", "temperature"])
-		details(["motion", "temperature", "battery"])
+		main(["motion", "temperature","humidity"])
+		details(["motion", "temperature", "humidity","battery",])
 	}
 }
 
