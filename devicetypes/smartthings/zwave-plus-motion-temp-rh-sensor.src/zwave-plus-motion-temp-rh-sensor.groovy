@@ -17,7 +17,7 @@
 */
 
 metadata {
-	definition (name: "Z-Wave Plus Motion/Temp Sensor", namespace: "smartthings", author: "SmartThings") {
+	definition (name: "Z-Wave Plus Motion/Temp/RH Sensor", namespace: "smartthings", author: "SmartThings") {
 		capability "Motion Sensor"
 		capability "Temperature Measurement"
 		capability "Configuration"
@@ -66,7 +66,7 @@ metadata {
 			state "battery", label:'${currentValue}% battery', unit:"%"
 		}
 
-		main(["motion", "temperature"])
+		main(["motion", "temperature", "humidity"])
 		details(["motion", "temperature", "humidity", "battery"])
 	}
 }
