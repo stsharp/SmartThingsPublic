@@ -66,8 +66,8 @@ metadata {
 			state "battery", label:'${currentValue}% battery', unit:"%"
 		}
 
-		main(["motion", "temperature","humidity"])
-		details(["motion", "temperature", "humidity","battery"])
+		main(["motion", "temperature"])
+		details(["motion", "temperature", "humidity", "battery"])
 	}
 }
 
